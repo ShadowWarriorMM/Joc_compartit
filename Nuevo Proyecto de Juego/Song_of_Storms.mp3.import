@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Song_of_Storms.mp3-4ff7014375747d417809cd3f2d7b2f1f.mp3str"
+
+[deps]
+
+source_file="res://Song_of_Storms.mp3"
+dest_files=[ "res://.import/Song_of_Storms.mp3-4ff7014375747d417809cd3f2d7b2f1f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

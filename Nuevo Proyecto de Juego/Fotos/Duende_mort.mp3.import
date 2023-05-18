@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Duende_mort.mp3-35dc4ec50a20447e33de9fcc0ecd9c10.mp3str"
+
+[deps]
+
+source_file="res://Fotos/Duende_mort.mp3"
+dest_files=[ "res://.import/Duende_mort.mp3-35dc4ec50a20447e33de9fcc0ecd9c10.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

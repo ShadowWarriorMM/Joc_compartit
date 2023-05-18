@@ -1,0 +1,135 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Enemic3.gd" type="Script" id=1]
+[ext_resource path="res://Fotos/Hurt_(64 x 32).png" type="Texture" id=2]
+[ext_resource path="res://Fotos/Walking_(64 x 32).png" type="Texture" id=3]
+[ext_resource path="res://Audio/Duende_mort.mp3" type="AudioStream" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16, 16 )
+
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 16, 16 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 3 )
+region = Rect2( 141, 0, 33, 32 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 3 )
+region = Rect2( 77, 0, 33, 32 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 3 )
+region = Rect2( 11, 0, 37, 32 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 3 )
+region = Rect2( 204, 0, 33, 32 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 3 )
+region = Rect2( 267, 0, 33, 32 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 3 )
+region = Rect2( 331, 0, 33, 32 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 19, 0, 28, 32 )
+
+[sub_resource type="SpriteFrames" id=24]
+animations = [ {
+"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
+"loop": true,
+"name": "Mou",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 22 ) ],
+"loop": true,
+"name": "mort",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=25]
+extents = Vector2( 7, 3.25 )
+
+[sub_resource type="RectangleShape2D" id=26]
+extents = Vector2( 7.5, 3.375 )
+
+[node name="Enemic3" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( -1, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 11, 5 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 11, 5 )
+shape = SubResource( 23 )
+
+[node name="Animació" type="AnimatedSprite" parent="."]
+show_behind_parent = true
+position = Vector2( 7, 2 )
+scale = Vector2( 1.13015, 1.13023 )
+frames = SubResource( 24 )
+animation = "Mou"
+frame = 3
+
+[node name="Temps_moviment" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+
+[node name="Temps2" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+
+[node name="Ataca" type="Timer" parent="."]
+wait_time = 2.49
+one_shot = true
+
+[node name="Duració atac" type="Timer" parent="."]
+wait_time = 0.35
+one_shot = true
+
+[node name="Llança1" type="Area2D" parent="."]
+position = Vector2( -1, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Llança1"]
+position = Vector2( 29, 14 )
+shape = SubResource( 25 )
+disabled = true
+
+[node name="Llança2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Llança2"]
+position = Vector2( -7.5, 14 )
+shape = SubResource( 26 )
+disabled = true
+
+[node name="Temps_mort" type="Timer" parent="."]
+wait_time = 2.6
+one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="timeout" from="Temps_moviment" to="." method="_on_Temps_moviment_timeout"]
+[connection signal="timeout" from="Temps2" to="." method="_on_Temps2_timeout"]
+[connection signal="timeout" from="Ataca" to="." method="_on_Ataca_timeout"]
+[connection signal="timeout" from="Duració atac" to="." method="_on_Duraci_atac_timeout"]
+[connection signal="body_entered" from="Llança1" to="." method="_on_Llana1_body_entered"]
+[connection signal="body_entered" from="Llança2" to="." method="_on_Llana2_body_entered"]
+[connection signal="timeout" from="Temps_mort" to="." method="_on_Temps_mort_timeout"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_AudioStreamPlayer2D_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Mal_espasa.mp3-fc0039d6ea5c7e5d8d046def470e1dbf.mp3str"
+
+[deps]
+
+source_file="res://Audio/Mal_espasa.mp3"
+dest_files=[ "res://.import/Mal_espasa.mp3-fc0039d6ea5c7e5d8d046def470e1dbf.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

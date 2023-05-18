@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/mario-coin.mp3-2471634e29169e5cb863db0d9344109c.mp3str"
+
+[deps]
+
+source_file="res://Audio/mario-coin.mp3"
+dest_files=[ "res://.import/mario-coin.mp3-2471634e29169e5cb863db0d9344109c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

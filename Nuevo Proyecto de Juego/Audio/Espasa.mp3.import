@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Espasa.mp3-0b2421e66061cc070e36006bd5fc247c.mp3str"
+
+[deps]
+
+source_file="res://Audio/Espasa.mp3"
+dest_files=[ "res://.import/Espasa.mp3-0b2421e66061cc070e36006bd5fc247c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

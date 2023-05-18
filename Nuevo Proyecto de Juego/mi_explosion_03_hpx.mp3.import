@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/mi_explosion_03_hpx.mp3-8337d29617ac2b593ad1e083778f452a.mp3str"
+
+[deps]
+
+source_file="res://mi_explosion_03_hpx.mp3"
+dest_files=[ "res://.import/mi_explosion_03_hpx.mp3-8337d29617ac2b593ad1e083778f452a.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
